@@ -1,0 +1,38 @@
+.preview-wrapper {
+  position: relative;
+  height: 100%;
+  /* this is the grow rate you can treat it as the BootStraps grid system.. out of 12 inline then you set the portion of the flex boxes */
+  flex-grow: 1;
+  /* to fix the extra pixel underneth when we use display: flex .*/
+  overflow: hidden;
+}
+
+.preview-wrapper iframe {
+  background-color: white;
+  /* the height and width percentage is relative to the parent element(div preview-wrapper)*/
+  /* so here both 100% means covering 100% up to the parent element */
+  height: 100%;
+  width: 100%;
+  /* display: block; or this can fix the extra pixel issue*/
+}
+
+/* The :after selector is a pseudo-class that allows you to add content after a selected element. */
+/* This element is an inline element.  */
+/* however, here we add a clear film after the <div className='preview-wrapper'> then transform this oringinally inline film over to completely cover the parent element(which is the second flex-box in row)
+:after is applying these css properties on top (that call it "after" in z-index) of "preview-wrapper" div */
+.react-draggable-transparent-selection .preview-wrapper:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.preview-error {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: red;
+}

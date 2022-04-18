@@ -1,0 +1,45 @@
+.add-cell {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  /* transition-property: opacity;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in;
+  transition-delay: 0.15s; */
+  transition: opacity 0.3s ease-in 0.15s;
+  margin: 10px 0;
+}
+
+.add-cell:hover {
+  opacity: 1;
+}
+
+.add-cell button {
+  margin: 0 2rem;
+}
+
+.add-cell .divider {
+  position: absolute;
+  /* 50 50 from top and bottom to center vertically*/
+  top: 50%;
+  bottom: 50%;
+  width: 95%;
+  border-bottom: 1px solid grey;
+  z-index: -1;
+}
+
+/* cant just do .force-visible because .force-visible as parent can not overide .add-cell {}'s opacity:0 which has top priority */
+/* therefore we have to target the specified .add-cell to obtain the top priority*/
+/* .force-visible .add-cell {
+  opacity: 1;
+} */
+
+/* this is when using the prop method instead of using the div conditional stuff*/
+.add-cell.force-visible {
+  opacity: 1;
+}
+
+/* NOTE: when the selector priority is the same like .force-visibile and .add-cell */
+/* then the order of the selector inside of css is important (placing on top has higher priority) */

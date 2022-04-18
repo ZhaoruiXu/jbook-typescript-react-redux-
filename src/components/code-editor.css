@@ -1,0 +1,25 @@
+.editor-wrapper {
+  position: relative;
+  height: 100%;
+  /* leave the 10px for the vertical sizing handle to adjust horizontal positioning*/
+  width: calc(100% - 10px);
+}
+
+.editor-wrapper .button-format {
+  position: absolute;
+  top: 0px;
+  right: 15px;
+  z-index: 20;
+  opacity: 0;
+  /* transition is whenevre there is a change to any property like opacity in this case, dont change it instantly allow it some time for the transition animation */
+  transition: opacity 0.3s;
+}
+
+/* when we hover over the editor div then make the button opacity to 1 */
+.editor-wrapper:hover .button-format {
+  opacity: 1;
+}
+
+/* .editor-wrapper:active .button-format {
+  opacity: 0;
+} */

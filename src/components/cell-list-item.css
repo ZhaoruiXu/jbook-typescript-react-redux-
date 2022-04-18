@@ -1,0 +1,11 @@
+.cell-list-item {
+  position: relative;
+  /* margin: 30px 10px; */
+}
+
+.action-bar-wrapper {
+  height: 30px;
+  /* cover the entire width of its parent div */
+  width: 100%;
+  background: #37414b;
+}

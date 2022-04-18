@@ -1,0 +1,13 @@
+.action-bar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0.25;
+  /* any transition that involves opacity, add 0.3 second transition aniamtion so that it not a immediate change */
+  transition: opacity 0.3s;
+  /* z-index: 1; */
+}
+
+.action-bar:hover {
+  opacity: 1;
+}
